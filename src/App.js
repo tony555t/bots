@@ -1,5 +1,7 @@
-import React,{useState,useEffect} from "react";
-import BotList from "../components/BotList";
+import React,{useEffect, useState} from "react";
+import BotList from "./components/BotList";
+import './App.css';
+
 
 
 
@@ -7,29 +9,36 @@ import BotList from "../components/BotList";
 
 const App=()=>{
   const [bots,setBots]=useState([]);  
-  const getBotsRequest =async ()=>{
-    const url ='https://robohash.org/sedofficiadeserunt.png?size=300x300&set=set1';
+   
+  const getBotsRequest = async() =>{
+    const url ='http://localhost:8001/bots';
+
 
     const response = await fetch(url);
-    const responseJson=await response.json();
+    const responseJson = await response.json();
 
-    console.log(response.json);
+    console.log(responseJson);
     setBots(responseJson.search);
   };
-  useEffect(() => {
-		getBotsa
-    
-    
-    
-    
-    aRequest(searchValue);
-	}, [searchValue]);
+  
 
-  return <div>
+  useEffect(() => {
+    getBotsRequest();
+  },[]);
+		
+	
+ 
+
+  return(
+  <div className="container-fluid bot-app">
+    <div className="row">
+
     <BotList bots={bots}/>
+    </div>
 
       
   </div>
+  );
 };
 
 
