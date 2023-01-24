@@ -2,10 +2,9 @@ import React,{useState,useEffect} from "react";
 import BotCollection from "./BotCollection";
 import YourBotArmy from "./YourBotArmy";
 
-
-function  BotDisplay(){
-    const [army, setArmy] = useState([]);
-    const [bots, setBots] = useState([]);
+function  BotsDisplay(){
+  const [bots, setBots] = useState([]);
+  const [army, setArmy] = useState([]);
 
 }
 function induct(bot) {
@@ -32,14 +31,16 @@ function handleDelete(bot) {
   });
 }
 
-function deleteHandler() {}
-return (
-  <div>
-    <YourBotArmy collection={army} clickHandler={retire} handleDelete={handleDelete} />
-    <BotCollection collection={bots} clickHandler={induct} handleDelete={handleDelete} />
-  </div>
-);
+function deleteHandler() {
+  return (
+    <div>
+      <YourBotArmy collection={army} clickHandler={retire} handleDelete={handleDelete} />
+      <BotCollection collection={bots} clickHandler={induct} handleDelete={handleDelete} />
+    </div>
+  );
+}
 
 
-export default BotsPage;
+
+export default BotsDisplay;
 

@@ -1,13 +1,13 @@
-import React from "react"
-import BotCard from "./BotCard"
+import React from "react";
+import BotCard from "./BotCard";
 
 
 
-Function YourBotArmy({colletion,clickHandler,deleteHandler}){
+function YourBotArmy({collection,clickHandler,deleteHandler}){
     return(
 
-        <div className="ui segment inverted olive bot-army">
-        <div className="ui five column grid">
+        <div className="ui segment inverted blue bot-army">
+        <div className="ui six column grid">
           {"CLICK ON A BOT TO ADD."}
           <div className="row bot-army-row">
             {collection.map((bot) => (
@@ -17,7 +17,7 @@ Function YourBotArmy({colletion,clickHandler,deleteHandler}){
         </div>
       </div>
     );
-  }
+  } export default YourBotArmy;
   
 
 
